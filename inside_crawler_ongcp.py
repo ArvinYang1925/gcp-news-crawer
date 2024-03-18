@@ -27,7 +27,9 @@ options.add_argument('--headless') #設定選項為 “headless” 和無 gpu �
 options.experimental_options["prefs"] = {'profile.default_content_settings' : {"images": 2},
                                          'profile.managed_default_content_settings' : {"images": 2}}
 
-driver = webdriver.Chrome(os.getcwd()+"/chromedriver-linux64", options=options)
+chromedriver_path = os.getcwd() + "/chromedriver-linux64"
+
+driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
 
 
 try:
