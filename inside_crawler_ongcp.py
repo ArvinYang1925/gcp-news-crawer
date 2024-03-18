@@ -29,7 +29,7 @@ options.experimental_options["prefs"] = {'profile.default_content_settings' : {"
 
 chromedriver_path = os.getcwd() + "/chromedriver-linux64"
 
-driver = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+driver = webdriver.Chrome(chromedriver_path, options=options)
 
 
 try:
