@@ -1,5 +1,6 @@
 from selenium import webdriver  #從library中引入webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 import time
 import os #可以用來取得路徑位置
@@ -28,8 +29,9 @@ options.experimental_options["prefs"] = {'profile.default_content_settings' : {"
                                          'profile.managed_default_content_settings' : {"images": 2}}
 
 chromedriver_path = os.getcwd() + "/chromedriver-linux64"
+service = Service(chromedriver_path)
 
-driver = webdriver.Chrome(chromedriver_path, options=options)
+driver = webdriver.Chrome(service=service, options=options)
 
 
 try:
